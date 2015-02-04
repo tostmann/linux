@@ -551,7 +551,7 @@ static int sx150x_install_irq_chip(struct sx150x_chip *chip,
 				irq_summary,
 				NULL,
 				sx150x_irq_thread_fn,
-				IRQF_SHARED | IRQF_TRIGGER_FALLING,
+				IRQF_SHARED | IRQF_TRIGGER_FALLING | IRQF_ONESHOT,
 				chip->irq_chip.name,
 				chip);
 	if (err < 0) {
